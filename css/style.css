@@ -1,0 +1,150 @@
+:root {
+    --main-color : #ff5722;
+    --main-butColor: #777;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.calculator {
+    width: 500px;
+    margin: auto;
+    box-shadow: 0 0 1px 0;
+}
+@media (max-width: 720px) {
+    .calculator {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0 0 0;
+    } 
+}
+/* Header */
+.calculator header {
+    width: 100%;
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.calculator header i {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--main-butColor);
+    cursor: pointer;
+}
+.calculator header i:hover {
+    color: var(--main-color);
+}
+.calculator header i.active {
+    color: var(--main-color);
+}
+/* Result */
+.calculator .result {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: end;
+    padding: 20px;
+    font-size: 20px;
+    overflow: hidden;
+}
+.calculator .result::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-butColor);
+    opacity: .4;
+    width: 90%;
+    height: 1px;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+.calculator .result .operations {
+    font-size: 30px;
+    width: 100%;
+    height: max-content;
+    text-align: right;
+}
+.calculator .result .done-operations {
+    width: 100%;
+    height: max-content;
+    color: var(--main-butColor);
+    text-align: right;
+    overflow-y: scroll;
+}
+.calculator .result .done-operations::-webkit-scrollbar {
+    width: 2px;
+    height: 10px;
+    background-color: var(--main-butColor);
+}
+@media (max-width: 720px) {
+    .calculator .result .done-operations::-webkit-scrollbar {
+        width: 0px;
+        background-color: transparent;
+    }
+}
+.calculator .result .done-operations>div {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.calculator .result .result-span {
+    color: var(--main-butColor);
+}
+/* Buttons */
+.calculator .buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    padding: 10px;
+}
+.calculator .buttons>span {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-butColor);
+    font-weight: 500;
+    cursor: pointer;
+}
+.calculator .buttons>span.number {
+    color: rgba(0, 0, 0, 0.938);
+    font-weight: 600;
+}
+.calculator .buttons>span.cuncel {
+    font-weight: 600;
+    color: var(--main-color);
+}
+.calculator .buttons>span.equal {
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 30px;
+}
+.calculator .buttons>.del {
+    color: var(--main-color);
+}
+.calculator .buttons>.percent {
+    color: var(--main-color);
+}
+.calculator .buttons>.div {
+    color: var(--main-color);
+}
+.calculator .buttons>.mult {
+    color: var(--main-color);
+}
+.calculator .buttons>.min {
+    color: var(--main-color);
+}
+.calculator .buttons>.add {
+    color: var(--main-color);
+}
