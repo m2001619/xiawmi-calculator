@@ -228,7 +228,8 @@ function filter(operations,calc2) {
         }else {
             /* if the operation clicked before the num in the beeging of the program */
             if(i===0 && (e==`+` || e==`×` || e==`÷` || e==`!` || e==`^`)) {
-                operations = `0${e}`;
+                let operations2 = document.querySelector(`.operations`);
+                operations2.textContent = `0${e}`;
                 numArr.push(0);
                 operArr.push(e);
                 numCheck = true;
